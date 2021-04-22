@@ -1,12 +1,52 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+import { CometChat } from "@cometchat-pro/chat";
+import NavBar from "../components/NavBar.vue";
+import Spinner from "../components/Spinner.vue";
+
+export default {
+  name: "home",
+  components: {
+    NavBar,
+    Spinner
+  },
+  data(){
+    return{
+      username:"",
+      avatar:"",
+      uid:"",
+      sendingMessage: false,
+      chatMessage:"",
+      loggingOut: false,
+      groupMessages:[],
+      loadingMessages: false
+    };
+  },
+  created(){
+    this.getLoggedInUser();
+  },
+  methods:{
+    getLoggedInUser(){
+      CometChat.getLoggedInUser().then(user => {
+        this.username = user.name;
+        this.avatar = user.avatar;
+        this.uid = user.uid;
+      }, error => {
+        this.$router.push({
+          name: "homepage"
+        });
+        console.log(error);
+      });
+    },
+  }
+};
+</script>
+
 
 <style>
 #app {
@@ -15,18 +55,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
