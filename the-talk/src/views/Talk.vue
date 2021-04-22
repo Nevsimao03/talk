@@ -140,7 +140,11 @@ export default {
           console.log("Message sending failed with error:", error);
         }
       );
-    }
+    },
+    scrollToBottom() {
+      const chat = document.getElementById("msg-page");
+      chat.scrollTo(0, chat.scrollHeight + 30);
+    },
   },
 };
 </script>
