@@ -114,6 +114,33 @@ export default {
         }
       );
     },
-  }
+    sendGroupMessage() {
+      this.sendingMessage = true;
+      var receiverID = process.env.VUE_APP_COMMETCHAT_GUID;
+      var messageText = this.chatMessage;
+      var messageType = CometChat.MESSAGE_TYPE.TEXT;
+      var receiverType = CometChat.RECEIVER_TYPE.GROUP;
+      let globalContext = this;
+      var textMessage = new CometChat.TextMessage(
+        receiverID,
+        messageText,
+        messageType,
+        receiverType
+      );
+      CometChat.sendMessage(textMessage).then(
+        message => {
+          console.log("Message sent successfully:", message);
+          this.chatMessage = "";
+          this.sendingMessage = false;
+          this.groupMessages = [...globalContext.groupMessages, message];
+          this.$nextTick(() => {
+          this.scrollToBottom()
+        })
+        }, error => {
+          console.log("Message sending failed with error:", error);
+        }
+      );
+    }
+  },
 };
 </script>
