@@ -20,7 +20,7 @@
         </div>
         <div class="login-image-column">
           <div class="image-holder">
-            <img src="../assets/login-illustration.svg" alt="login-illustration">
+            <!-- <img src="../assets/login-illustration.svg" alt="login-illustration"> -->
           </div>
         </div>
       </div>

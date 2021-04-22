@@ -20,7 +20,7 @@
                 </div>
                 <div class="text-center img-fluid empty-chat" v-else-if="!groupMessages.length">
                   <div class="empty-chat-holder">
-                    <img src="../assets/empty-state.svg" class="img-res" alt="empty state">
+                    <!-- <img src="../assets/empty-state.svg" class="img-res" alt="empty state"> -->
                   </div>
                   <div>
                     <h2> No new text? </h2>
@@ -41,9 +41,6 @@
                         </div>
                       </div>
                     </div>
-                    {% c-block-end %}
-
-                    {% c-block language=“javascript” %}
                     <div class="outgoing-chats" v-else>
                       <div class="outgoing-chats-msg">
                         <p>{{ message.data.text }}</p>

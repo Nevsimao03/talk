@@ -6,8 +6,8 @@
 
 <script>
 import { CometChat } from "@cometchat-pro/chat";
-import NavBar from "../components/NavBar.vue";
-import Spinner from "../components/Spinner.vue";
+import NavBar from "../src/components/NavBar.vue";
+import Spinner from "../src/components/Spinner";
 
 export default {
   name: "home",
