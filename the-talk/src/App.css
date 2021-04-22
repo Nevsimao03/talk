@@ -1,0 +1,38 @@
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+@import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+    font-size: 13px;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+    font-family: 'Abril Fatface';
+    margin-bottom: 20px;
+}
+
+button {
+    border: none;
+    width: 100%;
+    margin: auto;
+    margin-top: 40px;
+    cursor: pointer;
+    padding: 10px 0;
+    background: #1B47DB;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 04px 8px 0#CFDFFF, 06px 20px 0#CFDFFF;
+    font-weight: 700;
+    transform: perspective(1px) translateZ(0);
+}
