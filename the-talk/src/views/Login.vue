@@ -49,7 +49,7 @@ export default {
         });
       }, error => {
         this.showSpinner = false;
-        // alert("You enterd a username that doesn't exist.");
+        alert("You enterd a username that doesn't exist.");
         console.log("Login failed with error:", error.code);
       });
     }
